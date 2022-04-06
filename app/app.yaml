@@ -1,0 +1,5 @@
+DATA_DIR: 'dataset/data'
+IMAGE_DEPTH: 3
+IMAGE_WIDTH: 128
+TARGET_NAME : 'family'
+MODELS_DIR : 'model'
