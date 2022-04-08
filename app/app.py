@@ -149,6 +149,7 @@ with col2:
                 y=alt.Y("index", type="nominal", title=""),
             )
          )
+        st.altair_chart(chart, use_container_width=True)
         
 
     
