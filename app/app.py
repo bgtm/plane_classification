@@ -139,6 +139,8 @@ with col2:
         st.bar_chart(chart_data,
                         use_container_width=True)
         
+        data = pd.melt(chart_data.reset_index(), id_vars=["index"])
+        
         chart = (
             alt.Chart(data)
             .mark_bar()
@@ -147,7 +149,7 @@ with col2:
                 y=alt.Y("index", type="nominal", title=""),
             )
          )
-        data = pd.melt(chart_data.reset_index(), id_vars=["index"])
+        
 
     
 
