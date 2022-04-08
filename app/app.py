@@ -5,6 +5,7 @@ import tensorflow as tf
 import yaml
 import pandas as pd
 import pickle
+import altair as alt
 
 from PIL import Image
 
