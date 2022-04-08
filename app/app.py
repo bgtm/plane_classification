@@ -136,8 +136,8 @@ with col2:
         chart_data = chart_data.sort_values(by=['proba'],ascending=False)
         chart_data = chart_data.head(10)        
 
-        st.bar_chart(chart_data,
-                        use_container_width=True)
+        #st.bar_chart(chart_data,
+        #                use_container_width=True)
         
         data = pd.melt(chart_data.reset_index(), id_vars=["index"])
         
