@@ -3,6 +3,6 @@ matplotlib
 numpy
 streamlit
 tensorflow
-yaml
-pickle
+scikit-learn
+pyyaml
 PIL
