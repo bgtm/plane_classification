@@ -1,1 +1,8 @@
 pandas
+matplotlib.pyplot
+numpy
+streamlit
+tensorflow
+yaml
+pickle
+PIL
