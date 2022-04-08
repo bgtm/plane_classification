@@ -133,12 +133,20 @@ with col2:
                          index=list(label.values()),
                     columns = ['proba'])
         chart_data = chart_data.sort_values(by=['proba'],ascending=False)
-        chart_data = chart_data.head(10)
-        
-        
+        chart_data = chart_data.head(10)        
 
         st.bar_chart(chart_data,
                         use_container_width=True)
-    
+        
+        chart = (
+            alt.Chart(data)
+            .mark_bar()
+            .encode(
+                x=alt.X("value", type="quantitative", title="Probabilité"),
+                y=alt.Y("index", type="nominal", title=""),
+            )
+         )
+        data = pd.melt(chart_data.reset_index(), id_vars=["index"])
+
     
 
