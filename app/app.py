@@ -8,13 +8,13 @@ import pickle
 
 from PIL import Image
 
-with open(r'app.yaml') as file:
+with open(r'app/app.yaml') as file:
         app_load = yaml.safe_load(file)
 
 IMAGE_WIDTH = app_load['IMAGE_WIDTH']
 IMAGE_HEIGHT = IMAGE_WIDTH
 IMAGE_DEPTH = app_load['IMAGE_DEPTH']
-#TARGET_NAME = app_load['TARGET_NAME']
+
 
 def load_image(path):
     """Load an image as numpy array
@@ -49,9 +49,9 @@ def load_model(path, how):
     """Load tf/Keras model for prediction
     """    
     if how == "neuronnes" :
-        model = tf.keras.models.load_model('C:/py/projet_avion/plane_classification/models/'+path+'.h5')
+        model = tf.keras.models.load_model('models/'+path+'.h5')
     if how == "SVM" :
-        model = pickle.load(open('C:/py/projet_avion/plane_classification/models/'+path+'.pkl', 'rb'))
+        model = pickle.load(open('models/'+path+'.pkl', 'rb'))
         
     return model
     
@@ -104,12 +104,12 @@ with col2:
         
                 
         if option == 'Constructeur' :
-            with open(r'C:/py/projet_avion/plane_classification/models/manufacturer_label.yaml') as file:
+            with open(r'models/manufacturer_label.yaml') as file:
                 label = yaml.safe_load(file)
                 
 
         if option == 'Famille' :
-            with open(r'C:/py/projet_avion/plane_classification/models/family_label.yaml') as file:
+            with open(r'models/family_label.yaml') as file:
                 label = yaml.safe_load(file)    
                 
                 
